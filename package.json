@@ -1,0 +1,23 @@
+{
+  "name": "OriginCode-Study-Record",
+  "version": "1.0.0",
+  "description": "尝试学习把各类JS源码自己实现。。。",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RianMan/OriginCode-Study-Record.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RianMan/OriginCode-Study-Record/issues"
+  },
+  "homepage": "https://github.com/RianMan/OriginCode-Study-Record#readme",
+  "dependencies": {
+    "co": "^4.6.0"
+  }
+}
