@@ -1,3 +1,4 @@
+// promise 1.0  版本 能then ，但是不能连续调用
 function MyPromise(task) {
     const that = this;
 
