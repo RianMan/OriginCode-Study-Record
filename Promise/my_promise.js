@@ -21,6 +21,7 @@ function MyPromise(task) {
         if(that.status === 'pending'){
             that.status = 'fulfilled';
             that.value = value;
+            // 个人感觉就是一个发布订阅模式，当状态改变之后，循环调用里面存好的异步函数
             that.onFulfilledArr.forEach(item => item(value));
         }
     }
@@ -53,6 +54,7 @@ MyPromise.prototype.then = function(onFulfilled,onRejected) {
         this.onFulfilledArr.push(onFulfilled);
         this.onRejectedArr.push(onRejected);
     }
+    return new MyPromise();
 }
 
 module.exports = MyPromise;
