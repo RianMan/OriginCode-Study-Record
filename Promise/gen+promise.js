@@ -4,22 +4,22 @@ let fs = require('fs');
 // 神库
 let co = require('co');
 // 这是传统的一个异步回调，明显非常的差
-// fs.readFile('./1.json','utf8',(err,data)=>{
-//     if(!err){
-//         console.log(data);
-//         fs.readFile('./2.txt','utf8',(err,data)=>{
-//             console.log(data);
-//         })
-//     }
-// })
-function readFile(path) {
-    return new Promise((resolve, reject) => {
-        fs.readFile(path, 'utf8', (err, data) => {
-            if (err) reject(err);
-            resolve(data);
+fs.readFile('./1.json','utf8',(err,data)=>{
+    if(!err){
+        console.log(data);
+        fs.readFile('./2.txt','utf8',(err,data)=>{
+            console.log(data);
         })
-    })
-}
+    }
+})
+// function readFile(path) {
+//     return new Promise((resolve, reject) => {
+//         fs.readFile(path, 'utf8', (err, data) => {
+//             if (err) reject(err);
+//             resolve(data);
+//         })
+//     })
+// }
 // 算然没有回调地狱，但是写的还不是串行；
 // readFile('./1.json')
 // .then((data)=>{
@@ -68,12 +68,12 @@ function readFile(path) {
 
 // ---------------------async await 来解决
 // await后面必须接一个promise对象
-async function read(){
-    let r1 = await readFile('1.json');
-    console.log(r1);
-    let r2 = await readFile('2.txt');
-    console.log(r2 + 111)
-}
-read();
+// async function read(){
+//     let r1 = await readFile('1.json');
+//     console.log(r1);
+//     let r2 = await readFile('2.txt');
+//     console.log(r2 + 111)
+// }
+// read();
 
 
