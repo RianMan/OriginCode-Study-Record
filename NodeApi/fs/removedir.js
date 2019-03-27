@@ -51,16 +51,21 @@ function delDir(root,callback) {
 // });
 
 // 深度优先遍历目录 
-function widthFile(root,callback){
+function deepFile(root,callback){
+    // 读取根目录
     fs.readdir(root,(err,paths)=>{
+        // 循环读取每个子目录的文件
         function next(index){
+            // 当遍历完了以后就不遍历了
             if(index >= paths.length) return callback();
             let child = path.join(root,paths[index]);
             console.log(child);
             fs.stat(child,(e,stats)=>{
                 if(stats.isDirectory()){
-                    widthFile(child,()=>next(index + 1)); 
+                    // 如果是目录继续遍历
+                    deepFile(child,()=>next(index + 1)); 
                 }else{
+                    // 如果不是目录遍历下一个文件
                     next(index + 1);
                 }
             })
@@ -68,4 +73,25 @@ function widthFile(root,callback){
         next(0);
     })
 }
-widthFile('a.4',()=>{console.log('全部打印完毕')});
+// deepFile('a.4',()=>{console.log('全部打印完毕')});
+
+// 广度优先遍历
+function widthFile(rootpath){
+    fs.readdir(rootpath,(err,paths)=>{
+        if(!paths) return;
+        let len = paths.length;
+        let arr = [];
+        for (let index = 0; index < len; index++) {
+            let child = path.join(rootpath,paths[index]);
+            console.log(child);
+            if(fs.statSync(child)){
+                arr.push(child);
+            }
+        }
+        arr.forEach((v)=>{
+            widthFile(v);
+        })
+    })
+}
+
+widthFile('./a.5')
