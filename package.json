@@ -19,6 +19,7 @@
   "homepage": "https://github.com/RianMan/OriginCode-Study-Record#readme",
   "dependencies": {
     "co": "^4.6.0",
+    "handlebars": "^4.1.1",
     "mime": "^2.4.0"
   }
 }
