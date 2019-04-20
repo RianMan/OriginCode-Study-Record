@@ -30,21 +30,20 @@
         > 通过此方法去编译字符串代码
             传入content和filename给complie函数  
             module._compile(stripBOM(content), filename);  
-            调用这个方法去包裹函数执行<br />
+            调用这个方法去包裹函数执行
             ```
-            Module.wrap(content);<br />  
-            Module.wrap = function(script) {
-                return Module.wrapper[0] + script + Module.wrapper[1];
-            };<br />  
-            Module.wrapper = [
-                "(function (exports, require, module, __filename, __dirname) { ",
-                "\n});"
-            ]
+                Module.wrap(content);   
+                Module.wrap = function(script) {
+                    return Module.wrapper[0] + script + Module.wrapper[1];
+                };
+                Module.wrapper = [
+                    "(function (exports, require, module, __filename, __dirname) { ",
+                    "\n});"
+                ]
             ```
     6. 通过第五步拿到执行的代码块
         > compiledWrapper = vm.runInThisContext(wrapper)
 ---
 + module.exports 和 exports的区别？
     1. exports是module.exports的别名，但是不能直接改变exports的对象引用,
-    因为不会影响module.exports对象的值<br />  
-    module.exports = exports = {}
+    因为不会影响module.exports对象的值  module.exports = exports = {}
