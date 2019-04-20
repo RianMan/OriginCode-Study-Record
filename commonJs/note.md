@@ -1,6 +1,6 @@
 #实现一个require方法
 ---
-+首先通过阅读源代码去看看大概实现思路是怎么样的。
++ 首先通过阅读源代码去看看大概实现思路是怎么样的。
     1.首先我们通过传入的相对路径去着手
         > 源码通过这个方法进入（id就是传入的字符串） Module._load(id, this, /* isMain */ false);
     
@@ -44,7 +44,7 @@
     6.通过第五步拿到执行的代码块
         > compiledWrapper = vm.runInThisContext(wrapper)
 ---
-+module.exports 和 exports的区别？
++ module.exports 和 exports的区别？
     1. exports是module.exports的别名，但是不能直接改变exports的对象引用，
     因为不会影响module.exports对象的值
     module.exports = exports = {}
