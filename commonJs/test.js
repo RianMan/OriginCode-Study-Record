@@ -38,13 +38,17 @@ Module.tryModuleLoad = (module) => {
     Module._extensions[extension](module);
 }
 
-
+Module.cache = {};
 function myreq(pathname){
     let absPath = path.join(__dirname,pathname);
     // 解析出来绝对路径
     let module = new Module(absPath);
+    if(Module.cache[absPath]){
+        return Module.cache[absPath].exports;
+    }
     // 加载模块
     Module.tryModuleLoad(module);
+    Module.cache[absPath] = module;
     return module.exports;
 }
 
@@ -53,6 +57,7 @@ function myreq(pathname){
 
 // 实现一个js文件
 let jsa = myreq('./a.js');
+myreq('./a.js');
 
 // console.log(a)
 console.log(jsa)

@@ -47,3 +47,5 @@
 + module.exports 和 exports的区别？
     1. exports是module.exports的别名，但是不能直接改变exports的对象引用,
     因为不会影响module.exports对象的值  module.exports = exports = {}
+---
++ 实现moudule的缓存功能,当我require的时候,其实模块只会加载一次
