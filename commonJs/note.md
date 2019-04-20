@@ -28,19 +28,19 @@
     
     5. 如果读取是js文件
         > 通过此方法去编译字符串代码
-            传入content和filename给complie函数  
-            module._compile(stripBOM(content), filename);  
-            调用这个方法去包裹函数执行
-            ```
-                Module.wrap(content);   
-                Module.wrap = function(script) {
-                    return Module.wrapper[0] + script + Module.wrapper[1];
-                };
-                Module.wrapper = [
-                    "(function (exports, require, module, __filename, __dirname) { ",
-                    "\n});"
-                ]
-            ```
+        传入content和filename给complie函数  
+        module._compile(stripBOM(content), filename);  
+        调用这个方法去包裹函数执行  
+        ```
+            Module.wrap(content);   
+            Module.wrap = function(script) {
+                return Module.wrapper[0] + script + Module.wrapper[1];
+            };
+            Module.wrapper = [
+                "(function (exports, require, module, __filename, __dirname) { ",
+                "\n});"
+            ]
+        ```
     6. 通过第五步拿到执行的代码块
         > compiledWrapper = vm.runInThisContext(wrapper)
 ---
