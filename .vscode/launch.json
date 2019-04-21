@@ -4,11 +4,18 @@
     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
+        // {
+        //     "type": "node",
+        //     "request": "launch",
+        //     "name": "启动程序",
+        //     "program": "${workspaceFolder}/commonJs/test.js",
+        //     "cwd":"${workspaceFolder}"
+        // },
         {
             "type": "node",
             "request": "launch",
-            "name": "启动程序",
-            "program": "${workspaceFolder}/commonJs/test.js",
+            "name": "启动程序11",
+            "program": "${workspaceFolder}/koa/koa-route.js",
             "cwd":"${workspaceFolder}"
         }
     ]
