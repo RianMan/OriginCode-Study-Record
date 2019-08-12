@@ -34,3 +34,8 @@
 3. koa的中间件和express的中间件区别
     > koa的中间件返回的是一个promise,支持异步同步,
     > 虽然都是通过一个中间层的函数不断递归,可能koa的判断没有那么多,因为他只有一个use方法,而不像express有那么的判断条件
+
+4. 常见与koa搭档开发的库
+    - koa-router ，用来定义路由
+    - koa-bodyparser，用来解析请求相关的参数
+    - koa-static， 搭建一个静态资源服务器
