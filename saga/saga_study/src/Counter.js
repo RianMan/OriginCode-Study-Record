@@ -19,7 +19,6 @@ class Counter extends Component {
     }
 
     handleAsyncClick = () => {
-        console.log(this.props)
         this.props.asyncAdd();
     }
 

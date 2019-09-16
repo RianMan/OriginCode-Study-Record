@@ -11,6 +11,7 @@ module.exports = webpackMerge(baseConfig,{
         hot: true,
         port: 9009,
     },
+    devtool: 'source-map',
     plugins:[
         new webpack.DefinePlugin({
             ENV: JSON.stringify('development'),
